@@ -10,8 +10,13 @@ export class UsersController {
 
     constructor(private UserService : UsersService){}
 
+        @Get()
+        getUsers(){
+            return this.UserService.getUser();
+        }
+
         @Post()
-        CreateUserDto(@Body() newUser : CreateUserDto ){
+        createUser(@Body() newUser : CreateUserDto ){
             return this.UserService.CreateUser(newUser)
         }
     
